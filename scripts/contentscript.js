@@ -3,7 +3,8 @@
 (function (chrome) {
   var link_avatar = "https://scontent.fhan2-2.fna.fbcdn.net/v/t1.0-1/cp0/c0.0.80.80a/p80x80/91871764_1323740761159860_7711545584477274112_o.jpg?_nc_cat=111&_nc_sid=1eb0c7&_nc_ohc=AQvmZY8hqIYAX_vhFf9&_nc_ht=scontent.fhan2-2.fna&oh=4c5a556c869fefc8b00bb1ccdad3a674&oe=5F65FFD6";
   var link_api = "https://gxcl.info/api.php";
-  var link_photo, width, height;
+  var link_page = "https://facebook.com/gaixinhchonloc";
+  var link_photo, width, height, div_parent;
   jQuery(document).ready(function ($) {
     $('[aria-label="Marketplace"]').closest("li").remove();
     $(window).scroll(function () {
@@ -19,14 +20,15 @@
         div.removeAttr('data-pagelet'); // chỉnh ảnh
 
         div.find("a[aria-hidden=\"true\"]").empty();
-        div.find("a[aria-hidden=\"true\"]").attr('href', 'https://facebook.com/gaixinhchonloc');
-        div.find("a[aria-hidden=\"true\"]").append("<img src=\"".concat(link_avatar, "\" style=\"height: 40px; width: 40px; border-radius:50%\">")); //
-        // //    chỉnh tên Page
+        div.find("a[aria-hidden=\"true\"]").attr('href', link_page);
+        div.find("a[aria-hidden=\"true\"]").append("<img src=\"".concat(link_avatar, "\" style=\"height: 40px; width: 40px; border-radius:50%\">")); //    chỉnh tên Page
 
         div.find('strong').text('Gái Xinh Chọn Lọc');
-        div.find('strong').parent('a').attr('href', 'https://facebook.com/gaixinhchonloc'); //
+        div.find('strong').parent('a').attr('href', link_page); // thêm ảnh
+        // div_parent = div.find(`div[dir='auto']`).parent('div').empty();
 
-        div_parent = div.find("div[dir='auto']").parent('div').empty();
+        div_parent = div.find("a[aria-hidden=\"true\"]").closest('div:not([class])').next();
+        div_parent.empty();
         div_parent.append("\n                    <div class=\"ecm0bbzt hv4rvrfc ihqw7lf3 dati1w0a\">\n                        <div class=\"j83agx80 cbu4d94t ew0dbk1b irj2b8pg\">\n                            <div class=\"qzhwtbm6 knvmm38d\">\n                                <span dir=\"auto\"\n                                      class=\"oi732d6d ik7dh3pa d2edcug0 qv66sw1b c1et5uql a8c37x1j muag1w35 enqfppq2 jq4qci2q a3bd9o3v knj5qynh oo9gr5id hzawbc8m\">\n                                    <div class=\"kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x c1et5uql\">\n                                        <div dir=\"auto\" style=\"text-align: start;\">Qu\u1EA3ng c\xE1o n\xE0y \u0111\u01B0\u1EE3c \u1EA9n b\u1EDFi ti\u1EC7n \xEDch <a href=\"https://facebook.com/gaixinhchonloc\">G\xE1i Xinh Ch\u1ECDn L\u1ECDc.</a></div>\n                                    </div>\n                                </span>\n                            </div>\n                        </div>\n                    </div>\n                ");
         var background = chrome.runtime.connect({
           name: "bg"
