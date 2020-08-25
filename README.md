@@ -6,7 +6,7 @@
 
 # Tính Năng - Features
 
-- [Thay Thế Quảng Cáo Facebook bằng Ảnh Gái - Replace Sponsored Facebook with Girl Image](#remove-sponsored-facebook)
+- [Thay thế Quảng cáo Facebook bằng ảnh Gái - Replace Sponsored Facebook with Girl's image](#remove-sponsored-facebook)
 - [Ẩn mục Cửa hàng- Hide Marketplace](#hide-marketplace)
 
 # Góp Ý Bổ Sung Tính Năng - Issues
