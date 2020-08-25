@@ -4,15 +4,16 @@
  <p align="center">A place to admire the beauty</p>
 </p>
 
-# Tính Năng - Features
+# Tính năng - Features
 
 - [Thay thế Quảng cáo Facebook bằng ảnh Gái - Replace Sponsored Facebook with Girl's image](#remove-sponsored-facebook)
 - [Ẩn mục Cửa hàng- Hide Marketplace](#hide-marketplace)
 
-# Góp Ý Bổ Sung Tính Năng - Issues
+# Góp ý - Issues
 Liên hệ mình nhé [Facebook](https://facebook.com/j2teamnnl).
 Contact me on [Facebook](https://facebook.com/j2teamnnl).
 
 # Bản quyền - License
 Đây là 1 tiện ích mã nguồn mở theo [giấy phép MIT](MIT-license.txt).
 This extension is open-sourced software licensed under the [MIT license](MIT-license.txt).
+
