@@ -10,4 +10,9 @@
 - [Ẩn mục Cửa hàng- Hide Marketplace](#hide-marketplace)
 
 # Góp Ý Bổ Sung Tính Năng - Issues
-Liên hệ mình nhé [Facebook](https://facebook.com/j2teamnnl)
+Liên hệ mình nhé [Facebook](https://facebook.com/j2teamnnl).
+Contact me on [Facebook](https://facebook.com/j2teamnnl).
+
+# Bản quyền - License
+Đây là 1 dự án mã nguồn mở theo [giấy phép MIT](MIT-license.txt).
+The Laravel framework is open-sourced software licensed under the [MIT license](MIT-license.txt).
