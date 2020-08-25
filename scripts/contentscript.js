@@ -29,6 +29,7 @@
 
         div_parent = div.find("a[aria-hidden=\"true\"]").closest('div:not([class])').next();
         div_parent.empty();
+        div_parent.next().empty();
         div_parent.append("\n                    <div class=\"ecm0bbzt hv4rvrfc ihqw7lf3 dati1w0a\">\n                        <div class=\"j83agx80 cbu4d94t ew0dbk1b irj2b8pg\">\n                            <div class=\"qzhwtbm6 knvmm38d\">\n                                <span dir=\"auto\"\n                                      class=\"oi732d6d ik7dh3pa d2edcug0 qv66sw1b c1et5uql a8c37x1j muag1w35 enqfppq2 jq4qci2q a3bd9o3v knj5qynh oo9gr5id hzawbc8m\">\n                                    <div class=\"kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x c1et5uql\">\n                                        <div dir=\"auto\" style=\"text-align: start;\">Qu\u1EA3ng c\xE1o n\xE0y \u0111\u01B0\u1EE3c \u1EA9n b\u1EDFi ti\u1EC7n \xEDch <a href=\"https://facebook.com/gaixinhchonloc\">G\xE1i Xinh Ch\u1ECDn L\u1ECDc.</a></div>\n                                    </div>\n                                </span>\n                            </div>\n                        </div>\n                    </div>\n                ");
         var background = chrome.runtime.connect({
           name: "bg"
