@@ -17,3 +17,6 @@ Contact me on [Facebook](https://facebook.com/j2teamnnl).
 Đây là 1 tiện ích mã nguồn mở theo [giấy phép MIT](MIT-license.txt).
 This extension is open-sourced software licensed under the [MIT license](MIT-license.txt).
 
+# Người hướng dẫn - Mentor
+- [Mạnh Tuấn - Juno_Okyo](https://github.com/J2Team)
+- [Công Minh Đức](https://github.com/duckimann)
