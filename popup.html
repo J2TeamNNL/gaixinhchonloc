@@ -1,25 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <!-- build:css styles/popup-vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css styles/main.css -->
-    <link href="styles/main.css" rel="stylesheet">
-    <!-- endbuild -->
-  </head>
-  <body>
-    <h1>'Allo, 'Allo!</h1>
-
-    <!-- build:js scripts/popup-vendor.js -->
-    <!-- bower:js -->
-    <!-- endbower -->
-    <!-- endbuild -->
-
-    <!-- build:js scripts/popup.js -->
-    <script src="scripts/popup.js"></script>
-    <!-- endbuild -->
-  </body>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+		<link href="styles/popup.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div>
+			<h1 align="center">Ẩn</h1>
+			<ul>
+				<li>
+					<label>
+						<input type="checkbox" name="qc">
+						<div class="icon-box">
+							<i class="fa fa-ad" aria-hidden="true"></i>
+						</div>
+						Quảng cáo
+					</label>
+				</li>
+				<li>
+					<label>
+						<input type="checkbox" name="store">
+						<div class="icon-box">
+							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+						</div>
+						Nút cửa hàng
+					</label>
+				</li>
+				<li>
+					<label>
+						<input type="checkbox" name="sharedPost">
+						<div class="icon-box">
+							<i class="fa fa-share" aria-hidden="true"></i>
+						</div>
+						Bài chia sẻ
+					</label>
+				</li>
+				<li>
+					<label>
+						<input type="checkbox" name="inclKeyword">
+						<div class="icon-box">
+							<i class="fa fa-file-text-o" aria-hidden="true"></i>
+						</div>
+						Bài chứa từ khoá
+					</label>
+				</li>
+				<li>
+					<label>
+						<input type="checkbox" name="yt" disabled />
+						<div class="icon-box">
+							<i class="fa fa-youtube" aria-hidden="true"></i>
+						</div>
+						(Sắp tới)
+					</label>
+				</li>
+			</ul>
+		</div>
+		<script src="scripts/popup.js"></script>
+	</body>
 </html>
