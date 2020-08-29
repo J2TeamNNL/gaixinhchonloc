@@ -8,7 +8,7 @@
 <h3>Facebook</h3>
 - [Thay thế Quảng cáo - Replace Sponsored](#replace-sponsored-facebook)
 - [Thay thế Bài chia sẻ - Replace Shared Post](#replace-shared-post-facebook)
-- [Ẩn mục Cửa hàng - Hide Marketplace](#hide-marketplace-facebook)
+- [Ẩn mục Cửa hàng - Hide Marketplace](#hide-marketplace-facebook) 
 
 # Góp ý - Issues
 Liên hệ mình nhé [Facebook](https://facebook.com/j2teamnnl).
