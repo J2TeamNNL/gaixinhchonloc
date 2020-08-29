@@ -1,9 +1,32 @@
 {
   "appName": {
-    "message": "Gai Xinh Chon Loc",
-    "description": "Beatiful Girl"
+    "message": "Gai Xinh Chon Loc"
   },
   "appDescription": {
     "message": "A place to share saved photos"
+  },
+  "notification": {
+    "message": "was replaced by extension"
+  },
+  "h1_title": {
+    "message": "Replace"
+  },
+  "ads": {
+    "message": "Ads"
+  },
+  "store": {
+    "message": "Store button"
+  },
+  "shared_post": {
+    "message": "Shared Post"
+  },
+  "contains_keywords": {
+    "message": "Post contains keywords"
+  },
+  "upcoming": {
+    "message": "(Upcoming)"
+  },
+  "yt": {
+    "message": "Ads Youtube"
   }
 }

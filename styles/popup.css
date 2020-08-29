@@ -35,6 +35,7 @@ ul li {
 	list-style: none;
 	text-align: center;
 	margin: 15px;
+	min-width: 60px;
 }
 ul li label {
 	position: relative;
@@ -47,7 +48,7 @@ ul li label input[type="checkbox"] {
 ul li label :checked ~ .icon-box {
 	box-shadow: inset -2px -2px 5px white, inset 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
-ul li label :checked ~ .icon-box .fa {
+ul li label :checked ~ .icon-box .fa,ul li label :checked ~ .icon-box .fab {
 	transform: scale(0.95);
 }
 ul li label :disabled ~ .icon-box {
@@ -55,7 +56,7 @@ ul li label :disabled ~ .icon-box {
 	background-color: #6c757d;
 	border-color: #6c757c;
 }
-ul li label :disabled ~ .icon-box .fa {
+ul li label :disabled ~ .icon-box .fa,ul li label :disabled ~ .icon-box .fab {
 	transform: scale(0.95);
 	color: white;
 }
@@ -68,7 +69,7 @@ ul li label .icon-box {
 	box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
 }
-ul li label .icon-box .fa {
+ul li label .icon-box .fa,ul li label .icon-box .fab {
 	font-size: 30px;
 	color: #6a9bd8;
 }

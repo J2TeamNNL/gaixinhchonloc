@@ -16,7 +16,8 @@
     ]
   },
   "permissions": [
-    "storage"
+    "storage",
+    "https://gxcl.info/api.php"
   ],
   "content_scripts": [
     {
@@ -39,5 +40,6 @@
   },
   "web_accessible_resources": [
     "images/48.png"
-  ]
+  ],
+  "content_security_policy": "script-src 'self' https://*.fontawesome.com; object-src 'self'"
 }

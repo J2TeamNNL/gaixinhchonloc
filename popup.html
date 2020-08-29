@@ -1,62 +1,61 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-		<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-		<link href="styles/popup.css" rel="stylesheet" type="text/css">
-	</head>
-	<body>
-		<div>
-			<h1 align="center">Ẩn</h1>
-			<ul>
-				<li>
-					<label>
-						<input type="checkbox" name="qc">
-						<div class="icon-box">
-							<i class="fa fa-ad" aria-hidden="true"></i>
-						</div>
-						Quảng cáo
-					</label>
-				</li>
-				<li>
-					<label>
-						<input type="checkbox" name="store">
-						<div class="icon-box">
-							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-						</div>
-						Nút cửa hàng
-					</label>
-				</li>
-				<li>
-					<label>
-						<input type="checkbox" name="sharedPost">
-						<div class="icon-box">
-							<i class="fa fa-share" aria-hidden="true"></i>
-						</div>
-						Bài chia sẻ
-					</label>
-				</li>
-				<li>
-					<label>
-						<input type="checkbox" name="inclKeyword">
-						<div class="icon-box">
-							<i class="fa fa-file-text-o" aria-hidden="true"></i>
-						</div>
-						Bài chứa từ khoá
-					</label>
-				</li>
-				<li>
-					<label>
-						<input type="checkbox" name="yt" disabled />
-						<div class="icon-box">
-							<i class="fa fa-youtube" aria-hidden="true"></i>
-						</div>
-						(Sắp tới)
-					</label>
-				</li>
-			</ul>
-		</div>
-		<script src="scripts/popup.js"></script>
-	</body>
+<head>
+	<meta charset="utf-8">
+	<link href="styles/css/all.css" rel="stylesheet" type="text/css">
+	<link href="styles/popup.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div>
+	<h1 align="center" class="msg">__MSG_h1_title__</h1>
+	<ul>
+		<li>
+			<label>
+				<input type="checkbox" name="ads" checked>
+				<div class="icon-box">
+					<i class="fa fa-ad" aria-hidden="true"></i>
+				</div>
+				<p class="msg">__MSG_ads__</p>
+			</label>
+		</li>
+		<li>
+			<label>
+				<input type="checkbox" name="store" checked>
+				<div class="icon-box">
+					<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+				</div>
+				<p class="msg">__MSG_store__</p>
+			</label>
+		</li>
+		<li>
+			<label>
+				<input type="checkbox" name="shared_post">
+				<div class="icon-box">
+					<i class="fa fa-share" aria-hidden="true"></i>
+				</div>
+				<p class="msg">__MSG_shared_post__</p>
+			</label>
+		</li>
+		<li>
+			<label>
+				<input type="checkbox" name="contains_keywords" disabled>
+				<div class="icon-box">
+					<i class="fa fa-file-alt" aria-hidden="true"></i>
+				</div>
+				<p class="msg">__MSG_upcoming__</p>
+			</label>
+		</li>
+		<li>
+			<label>
+				<input type="checkbox" name="yt" disabled />
+				<div class="icon-box">
+					<i class="fab fa-youtube" aria-hidden="true"></i>
+				</div>
+				<p class="msg">__MSG_upcoming__</p>
+			</label>
+		</li>
+	</ul>
+</div>
+<script src="scripts/popup.js"></script>
+</body>
 </html>
