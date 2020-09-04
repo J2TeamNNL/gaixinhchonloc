@@ -31,4 +31,9 @@ function updateBadge(str = "String", color = "#155997") {
     
     fncTable[Object.keys(msg)[0]]();
   });
+
+  // Open options page When Click To Icon
+  chrome.browserAction.onClicked.addListener((a) => {
+    chrome.tabs.create({url: chrome.runtime.getURL("popup.html"), selected: true});
+  });
 })(chrome);
