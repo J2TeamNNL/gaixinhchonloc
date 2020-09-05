@@ -8,6 +8,12 @@
   "notification": {
     "message": "was replaced by extension"
   },
+  "group": {
+    "message": "Group"
+  },
+  "page": {
+    "message": "Page"
+  },
   "h1_title": {
     "message": "Replace"
   },
@@ -21,12 +27,21 @@
     "message": "Shared Post"
   },
   "contains_keywords": {
-    "message": "Post contains keywords"
+    "message": "Contains keywords"
+  },
+  "post": {
+    "message": "Post"
+  },
+  "comment": {
+    "message": "Comment"
+  },
+  "pac": {
+    "message": "Post and Comment"
+  },
+  "pac_guide": {
+    "message": "(Press Enter to insert)"
   },
   "upcoming": {
     "message": "(Upcoming)"
-  },
-  "yt": {
-    "message": "Ads Youtube"
   }
 }

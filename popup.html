@@ -3,59 +3,81 @@
 <head>
 	<meta charset="utf-8">
 	<link href="styles/css/all.css" rel="stylesheet" type="text/css">
+	<link href="styles/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="styles/css/bootstrap-tagsinput.css" rel="stylesheet" type="text/css">
 	<link href="styles/popup.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div>
-	<h1 align="center" class="msg">__MSG_h1_title__</h1>
-	<ul>
-		<li>
-			<label>
+<header>
+	<a href="https://gaixinhchonloc.com/" target="_blank"><h3 class="msg">__MSG_appName__</h3></h3>
+</header>
+<main class="container">
+	<div class="row">
+		<div class="col-12 text-center">
+			<h1 class="text-center mb-0 msg">__MSG_h1_title__</h1>
+			<a target="_blank" href="https://gaixinhchonloc.com">
+				<i class="fas fa-link"></i>
+				<span class="d-none d-sm-inline">gaixinhchonloc.com</span>
+			</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 pb-0">
+			<h4 class="text-center mb-0">Facebook</h4>
+		</div>
+	</div>
+	<div class="row lists">
+		<div class="col-sm-6 col-md-5 offset-md-1 list-custom">
+			<label class="checkbox checked msg">
 				<input type="checkbox" name="ads" checked>
-				<div class="icon-box">
-					<i class="fa fa-ad" aria-hidden="true"></i>
-				</div>
-				<p class="msg">__MSG_ads__</p>
+				<span class="input-group-addon"><i class="fa fa-fw fa-ad"></i></span> __MSG_ads__
 			</label>
-		</li>
-		<li>
-			<label>
+			<label class="checkbox checked msg">
 				<input type="checkbox" name="store" checked>
-				<div class="icon-box">
-					<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-				</div>
-				<p class="msg">__MSG_store__</p>
+				<span class="input-group-addon"><i class="fa fa-fw fa-shopping-cart"></i></span> __MSG_store__
 			</label>
-		</li>
-		<li>
-			<label>
+		</div>
+		<div class="col-sm-6 offset-md-1 col-lg-5 list-custom">
+			<label class="checkbox msg">
 				<input type="checkbox" name="shared_post">
-				<div class="icon-box">
-					<i class="fa fa-share" aria-hidden="true"></i>
-				</div>
-				<p class="msg">__MSG_shared_post__</p>
+				<span class="input-group-addon"><i class="fa fa-fw fa-share"></i></span> __MSG_shared_post__
 			</label>
-		</li>
-		<li>
-			<label>
-				<input type="checkbox" name="contains_keywords" disabled>
-				<div class="icon-box">
-					<i class="fa fa-file-alt" aria-hidden="true"></i>
-				</div>
-				<p class="msg">__MSG_upcoming__</p>
+			<label class="checkbox msg">
+				<input type="checkbox" id="checkbox_contains_keywords" name="contains_keywords">
+				<span class="input-group-addon"><i class="fa fa-fw fa-envelope-open-text"></i></span> __MSG_contains_keywords__
 			</label>
-		</li>
-		<li>
-			<label>
-				<input type="checkbox" name="yt" disabled />
-				<div class="icon-box">
-					<i class="fab fa-youtube" aria-hidden="true"></i>
-				</div>
-				<p class="msg">__MSG_upcoming__</p>
+		</div>
+	</div>
+	<div id="div_contains_keywords" style="display: none;" class="form-group  offset-md-1">
+		<label class="control-label  offset-md-1" for="pac"><span class="msg">__MSG_pac__</span> <i class="msg">__MSG_pac_guide__</i></label>
+		<div class="col-sm-12">
+			<textarea class="form-control col-sm-11" id="pac" name="pac"></textarea>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 pb-0">
+			<h4 class="text-center mb-0 disabled msg">Youtube __MSG_upcoming__</h4>
+		</div>
+	</div>
+	<div class="row lists">
+		<div class="col-sm-6 col-md-5 offset-md-1 list-custom">
+			<label class="checkbox disabled msg">
+				<input type="checkbox" disabled name="yt">
+				<span class="input-group-addon"><i class="fa fa-fw fa-ad"></i></span> __MSG_ads__
 			</label>
-		</li>
-	</ul>
-</div>
+		</div>
+	</div>
+</main>
+<footer>
+	<a href="https://facebook.com/groups/gaixinhchonloc" target="_blank" class="msg">
+		<i class="fas fa-users"></i> __MSG_group__
+	</a>
+	<a href="https://facebook.com/gaixinhchonloc" target="_blank" class="msg">
+		<i class="fas fa-thumbs-up"></i> __MSG_page__
+	</a>
+</footer>
+<script src="scripts/libs/jquery.min.js"></script>
+<script src="scripts/libs/bootstrap-tagsinput.js"></script>
 <script src="scripts/popup.js"></script>
 </body>
 </html>

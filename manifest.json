@@ -1,6 +1,6 @@
 {
   "name": "__MSG_appName__",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "manifest_version": 2,
   "description": "__MSG_appDescription__",
   "icons": {
@@ -35,11 +35,10 @@
       "19": "images/19.png",
       "38": "images/38.png"
     },
-    "default_title": "Gái Xinh Chọn Lọc",
-    "default_popup": "popup.html"
+    "default_title": "Gái Xinh Chọn Lọc"
   },
   "web_accessible_resources": [
     "images/48.png"
   ],
-  "content_security_policy": "script-src 'self' https://*.fontawesome.com; object-src 'self'"
+  "content_security_policy": "script-src 'self'; object-src 'self'"
 }

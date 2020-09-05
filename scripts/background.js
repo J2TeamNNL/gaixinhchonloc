@@ -1,4 +1,16 @@
-'use strict';
+'use strict'; // Functions
+
+function _updateBadge() {
+  var str = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "String";
+  var color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "#155997";
+  // Because the badge has limited space, it should have 4 characters or less.
+  chrome.browserAction.setBadgeBackgroundColor({
+    color: color
+  });
+  chrome.browserAction.setBadgeText({
+    text: str
+  });
+}
 
 (function (chrome) {
   // Store options
@@ -12,7 +24,14 @@
         yt: false
       }
     });
-  }); // Fetch anything by background
+    chrome.storage.local.set({
+      keywords: []
+    });
+    chrome.tabs.create({
+      url: chrome.runtime.getURL("popup.html"),
+      selected: true
+    });
+  }); // Long-lived connection
 
   chrome.runtime.onConnect.addListener(function (port) {
     port.onMessage.addListener(function (msg) {
@@ -23,6 +42,22 @@
           response: data
         });
       });
+    });
+  }); // Short-lived connection. Actually just send the msg and quit.
+
+  chrome.runtime.onMessage.addListener(function (msg, from, response) {
+    var fncTable = {
+      updateBadge: function updateBadge() {
+        _updateBadge(msg.updateBadge.text, msg.updateBadge.color);
+      }
+    };
+    fncTable[Object.keys(msg)[0]]();
+  }); // Open options page When Click To Icon
+
+  chrome.browserAction.onClicked.addListener(function (a) {
+    chrome.tabs.create({
+      url: chrome.runtime.getURL("popup.html"),
+      selected: true
     });
   });
 })(chrome);

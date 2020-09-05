@@ -3,11 +3,12 @@
 var link_avatar = "https://scontent.fhan2-2.fna.fbcdn.net/v/t1.0-1/cp0/c0.0.80.80a/p80x80/91871764_1323740761159860_7711545584477274112_o.jpg?_nc_cat=111&_nc_sid=1eb0c7&_nc_ohc=AQvmZY8hqIYAX_vhFf9&_nc_ht=scontent.fhan2-2.fna&oh=4c5a556c869fefc8b00bb1ccdad3a674&oe=5F65FFD6";
 var link_api = "https://gxcl.info/api.php";
 var link_page = "https://facebook.com/gaixinhchonloc";
-var page_name = "G\xE1i Xinh Ch\u1ECDn L\u1ECDc";
 var link_photo, width, height, div;
 var ads = false,
     shared_post = false,
-    store = false;
+    store = false,
+    contains_keywords = false,
+    keywords = [];
 chrome.storage.local.get("opts", function (_ref) {
   var opts = _ref.opts;
 
@@ -22,6 +23,13 @@ chrome.storage.local.get("opts", function (_ref) {
   if (opts.store) {
     store = true;
   }
+
+  if (opts.contains_keywords) {
+    contains_keywords = true;
+    chrome.storage.local.get("keywords", function (result) {
+      keywords = result.keywords.split(',');
+    });
+  }
 });
 
 (function (chrome) {
@@ -31,12 +39,6 @@ chrome.storage.local.get("opts", function (_ref) {
     }
 
     $(window).scroll(function () {
-      if (shared_post) {
-        // bài chia sẻ
-        div = $('[data-testid="Keycommand_wrapper_feed_attached_story"]').closest("div[data-pagelet^=\"FeedUnit\"]").first();
-        executeDiv(div, chrome.i18n.getMessage('shared_post'));
-      }
-
       if (ads) {
         // bài quảng cáo
         div = $('[aria-label="Sponsored"]').closest("div[data-pagelet^=\"FeedUnit\"]").first();
@@ -46,6 +48,25 @@ chrome.storage.local.get("opts", function (_ref) {
         }
 
         executeDiv(div, chrome.i18n.getMessage('ads'));
+      }
+
+      if (shared_post) {
+        // bài chia sẻ
+        div = $('[data-testid="Keycommand_wrapper_feed_attached_story"]').closest("div[data-pagelet^=\"FeedUnit\"]").first();
+        executeDiv(div, chrome.i18n.getMessage('shared_post'));
+      }
+
+      if (contains_keywords) {
+        // bài hoặc bình luận chứa từ khoá
+        for (var i = 0; i < keywords.length; i++) {
+          div = $("span[class=\"oi732d6d ik7dh3pa d2edcug0 hpfvmrgz qv66sw1b c1et5uql a8c37x1j muag1w35 enqfppq2 jq4qci2q a3bd9o3v knj5qynh oo9gr5id hzawbc8m\"]:contains(".concat(keywords[i], ")")).closest("div[data-pagelet^=\"FeedUnit\"]").first();
+
+          if (div.length != 0) {
+            executeDiv(div, chrome.i18n.getMessage('post'));
+          } else {
+            $("div[class=\"kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x c1et5uql\"]:contains(".concat(keywords[i], "):not('.ex-replaced')")).html("\n                            ".concat(chrome.i18n.getMessage('comment'), " ").concat(chrome.i18n.getMessage('notification'), " <a href=\"https://facebook.com/gaixinhchonloc\">").concat(chrome.i18n.getMessage('appName'), ".</a>\n                        ")).addClass('ex-replaced');
+          }
+        }
       }
     });
   });
@@ -79,11 +100,11 @@ function changePagePicture(this_div) {
 }
 
 function changePageName(this_div) {
-  this_div.find('strong').closest('div').html("\n        <a class=\"oajrlxb2 g5ia77u1 qu0x051f esr5mh6w e9989ue4 r7d6kgcz rq0escxv nhd2j8a9 nc684nl6 p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso i1ao9s8h esuyzwwr f1sip0of lzcic4wl oo9gr5id gpro0wi8 lrazzd5p\"\n           href=\"".concat(link_page, "\" role=\"link\" tabindex=\"0\">\n            <strong>").concat(page_name, "</strong>\n        </a>\n    "));
+  this_div.find('strong').closest('div').html("\n        <a class=\"oajrlxb2 g5ia77u1 qu0x051f esr5mh6w e9989ue4 r7d6kgcz rq0escxv nhd2j8a9 nc684nl6 p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso i1ao9s8h esuyzwwr f1sip0of lzcic4wl oo9gr5id gpro0wi8 lrazzd5p\"\n           href=\"".concat(link_page, "\" role=\"link\" tabindex=\"0\">\n            <strong>").concat(chrome.i18n.getMessage('appName'), "</strong>\n        </a>\n    "));
 }
 
 function appendText(this_div_parent, type) {
-  this_div_parent.append("\n        <div class=\"ecm0bbzt hv4rvrfc ihqw7lf3 dati1w0a\">\n            <div class=\"j83agx80 cbu4d94t ew0dbk1b irj2b8pg\">\n                <div class=\"qzhwtbm6 knvmm38d\">\n                    <span dir=\"auto\"\n                          class=\"oi732d6d ik7dh3pa d2edcug0 qv66sw1b c1et5uql a8c37x1j muag1w35 enqfppq2 jq4qci2q a3bd9o3v knj5qynh oo9gr5id hzawbc8m\">\n                        <div class=\"kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x c1et5uql\">\n                            <div dir=\"auto\" style=\"text-align: start;\">".concat(type, " ").concat(chrome.i18n.getMessage('notification'), " <a href=\"https://facebook.com/gaixinhchonloc\">G\xE1i Xinh Ch\u1ECDn L\u1ECDc.</a></div>\n                        </div>\n                    </span>\n                </div>\n            </div>\n        </div>\n    "));
+  this_div_parent.append("\n        <div class=\"ecm0bbzt hv4rvrfc ihqw7lf3 dati1w0a\">\n            <div class=\"j83agx80 cbu4d94t ew0dbk1b irj2b8pg\">\n                <div class=\"qzhwtbm6 knvmm38d\">\n                    <span dir=\"auto\"\n                          class=\"oi732d6d ik7dh3pa d2edcug0 qv66sw1b c1et5uql a8c37x1j muag1w35 enqfppq2 jq4qci2q a3bd9o3v knj5qynh oo9gr5id hzawbc8m\">\n                        <div dir=\"auto\" style=\"text-align: start;\">".concat(type, " ").concat(chrome.i18n.getMessage('notification'), " <a href=\"https://facebook.com/gaixinhchonloc\">").concat(chrome.i18n.getMessage('appName'), ".</a></div>\n                    </span>\n                </div>\n            </div>\n        </div>\n    "));
 }
 
 function replaceWithImage(this_div_parent) {

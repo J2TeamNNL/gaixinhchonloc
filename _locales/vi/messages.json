@@ -1,6 +1,6 @@
 {
   "appName": {
-    "message": "Gai Xinh Chon Loc"
+    "message": "Gái Xinh Chọn Lọc"
   },
   "appDescription": {
     "message": "Nơi chia sẻ những bức ảnh đã lưu"
@@ -10,6 +10,12 @@
   },
   "notification": {
     "message": "đã bị thay thế bởi tiện ích"
+  },
+  "group": {
+    "message": "Nhóm"
+  },
+  "page": {
+    "message": "Trang"
   },
   "ads": {
     "message": "Quảng cáo"
@@ -21,10 +27,19 @@
     "message": "Bài chia sẻ"
   },
   "contains_keywords": {
-    "message": "Bài chứa từ khoá"
+    "message": "Chứa từ khoá"
   },
-  "youtube": {
-    "message": "Quảng cáo Youtube"
+  "post": {
+    "message": "Bài đăng"
+  },
+  "comment": {
+    "message": "Bình luận"
+  },
+  "pac": {
+    "message": "Bài đăng và Bình luận"
+  },
+  "pac_guide": {
+    "message": "(Bấm Enter để thêm)"
   },
   "upcoming": {
     "message": "(Sắp tới)"

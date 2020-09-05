@@ -28,3 +28,32 @@ document.body.onchange = function (a) {
     opts: values
   });
 };
+
+$(document).ready(function () {
+  $('#pac').tagsinput('items');
+  $('#pac').change(function () {
+    if ($(this).val() != '') {
+      $('#checkbox_contains_keywords').prop('checked', true).change();
+      chrome.storage.local.set({
+        keywords: $(this).val()
+      });
+    } else {
+      $('#checkbox_contains_keywords').prop('checked', false).change();
+    }
+  });
+  $('[type="checkbox"]').change(function () {
+    if ($(this).is(':checked')) {
+      $(this).parent('label').addClass('checked');
+    } else {
+      $(this).parent('label').removeClass('checked');
+    }
+  });
+  $('#checkbox_contains_keywords').change(function () {
+    if ($(this).is(':checked')) {
+      $("#div_contains_keywords").show();
+      $(".bootstrap-tagsinput").find('input').focus();
+    } else {
+      $("#div_contains_keywords").hide();
+    }
+  });
+});
