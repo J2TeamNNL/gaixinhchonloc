@@ -3,6 +3,7 @@
 var link_avatar = "https://scontent.fhan2-2.fna.fbcdn.net/v/t1.0-1/cp0/c0.0.80.80a/p80x80/91871764_1323740761159860_7711545584477274112_o.jpg?_nc_cat=111&_nc_sid=1eb0c7&_nc_ohc=AQvmZY8hqIYAX_vhFf9&_nc_ht=scontent.fhan2-2.fna&oh=4c5a556c869fefc8b00bb1ccdad3a674&oe=5F65FFD6";
 var link_api = "https://gxcl.info/api.php";
 var link_page = "https://facebook.com/gaixinhchonloc";
+var page_name = "G\xE1i Xinh Ch\u1ECDn L\u1ECDc";
 var link_photo, width, height, div;
 var ads = false,
     shared_post = false,
@@ -38,10 +39,10 @@ chrome.storage.local.get("opts", function (_ref) {
 
       if (ads) {
         // bài quảng cáo
-        div = $('[aria-label="Sponsored"]').closest("div[data-pagelet^=\"FeedUnit_\"]").first();
+        div = $('[aria-label="Sponsored"]').closest("div[data-pagelet^=\"FeedUnit\"]").first();
 
         if (div.length == 0) {
-          div = $('[aria-label="Được tài trợ"]').closest("div[data-pagelet^=\"FeedUnit_\"]").first();
+          div = $('[aria-label="Được tài trợ"]').closest("div[data-pagelet^=\"FeedUnit\"]").first();
         }
 
         executeDiv(div, chrome.i18n.getMessage('ads'));
@@ -53,13 +54,13 @@ chrome.storage.local.get("opts", function (_ref) {
 function executeDiv(this_div, type) {
   if (this_div.length !== 0) {
     // loại bỏ khỏi danh sách cũ
-    this_div.removeAttr('data-pagelet'); // chỉnh ảnh
+    this_div.removeAttr('data-pagelet'); // tìm div thông tin bài đăng
+
+    var div_parent = this_div.find("a[aria-hidden=\"true\"]").closest('div:not([class])').next(); // chỉnh ảnh
 
     changePagePicture(this_div); // chỉnh tên Page
 
-    changePageName(this_div); // tìm div thông tin bài đăng
-
-    var div_parent = this_div.find("a[aria-hidden=\"true\"]").closest('div:not([class])').next(); // xoá hết thông tin bài đăng gốc
+    changePageName(this_div); // xoá hết thông tin bài đăng gốc
 
     div_parent.empty();
     div_parent.next().empty();
@@ -74,14 +75,11 @@ function hideStoreButton() {
 }
 
 function changePagePicture(this_div) {
-  this_div.find("a[aria-hidden=\"true\"]").empty();
-  this_div.find("a[aria-hidden=\"true\"]").attr('href', link_page);
-  this_div.find("a[aria-hidden=\"true\"]").append("<img src=\"".concat(link_avatar, "\" style=\"height: 40px; width: 40px; border-radius:50%\">"));
+  this_div.find("a[aria-hidden=\"true\"]").closest('div').html("\n        <a class=\"oajrlxb2 g5ia77u1 qu0x051f esr5mh6w e9989ue4 r7d6kgcz rq0escxv nhd2j8a9 nc684nl6 p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso i1ao9s8h esuyzwwr f1sip0of lzcic4wl oo9gr5id gpro0wi8 lrazzd5p\"\n           href=\"".concat(link_page, "\" role=\"link\" tabindex=\"0\">\n            <img src=\"").concat(link_avatar, "\" style=\"height: 40px; width: 40px; border-radius:50%\">\n        </a>\n    "));
 }
 
 function changePageName(this_div) {
-  this_div.find('strong').text('Gái Xinh Chọn Lọc');
-  this_div.find('strong').parent('a').attr('href', link_page);
+  this_div.find('strong').closest('div').html("\n        <a class=\"oajrlxb2 g5ia77u1 qu0x051f esr5mh6w e9989ue4 r7d6kgcz rq0escxv nhd2j8a9 nc684nl6 p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso i1ao9s8h esuyzwwr f1sip0of lzcic4wl oo9gr5id gpro0wi8 lrazzd5p\"\n           href=\"".concat(link_page, "\" role=\"link\" tabindex=\"0\">\n            <strong>").concat(page_name, "</strong>\n        </a>\n    "));
 }
 
 function appendText(this_div_parent, type) {
