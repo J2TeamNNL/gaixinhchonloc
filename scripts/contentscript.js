@@ -9,6 +9,7 @@ var ads = false,
     store = false,
     contains_keywords = false,
     keywords = [];
+var class_comment_text = "kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x c1et5uql";
 chrome.storage.local.get("opts", function (_ref) {
   var opts = _ref.opts;
 
@@ -59,18 +60,31 @@ chrome.storage.local.get("opts", function (_ref) {
       if (contains_keywords) {
         // bài hoặc bình luận chứa từ khoá
         for (var i = 0; i < keywords.length; i++) {
-          div = $("span[class^=\"oi732d6d ik7dh3pa d2edcug0 hpfvmrgz qv66sw1b c1et5uql a8c37x1j muag1w35 enqfppq2 jq4qci2q a3bd9o3v knj5qynh oo9gr5id\"]:contains(".concat(keywords[i], ")")).closest("div[data-pagelet^=\"FeedUnit\"]").first();
+          div = getDivPost(keywords[i]);
 
-          if (div.length != 0) {
-            executeDiv(div, chrome.i18n.getMessage('post'));
-          } else {
-            $("div[class=\"kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x c1et5uql\"]:contains(".concat(keywords[i], "):not('.ex-replaced')")).html("\n                            ".concat(chrome.i18n.getMessage('comment'), " ").concat(chrome.i18n.getMessage('notification'), " <a href=\"https://facebook.com/gaixinhchonloc\">").concat(chrome.i18n.getMessage('appName'), ".</a>\n                        ")).addClass('ex-replaced');
+          if (div.length == 0) {
+            $("div[class=\"".concat(class_comment_text, "\"]:contains(").concat(keywords[i], "):not('.ex-replaced')")).html("\n                            ".concat(chrome.i18n.getMessage('comment'), " ").concat(chrome.i18n.getMessage('notification'), " <a href=\"https://facebook.com/gaixinhchonloc\">").concat(chrome.i18n.getMessage('appName'), ".</a>\n                        ")).addClass('ex-replaced');
           }
         }
       }
     });
   });
 })(chrome);
+
+function getDivPost(keyword) {
+  var class_post_text = ["ecm0bbzt hv4rvrfc ihqw7lf3 dati1w0a", "dati1w0a ihqw7lf3 hv4rvrfc ecm0bbzt"];
+
+  for (var i = 0; i < class_post_text.length; i++) {
+    var _div = $("div[data-pagelet^=\"FeedUnit\"]").has("div[class=\"".concat(class_post_text[i], "\"]:contains('").concat(keyword, "')")).first();
+
+    if (_div.length != 0) {
+      executeDiv(_div, chrome.i18n.getMessage('post'));
+      break;
+    }
+  }
+
+  return div;
+}
 
 function executeDiv(this_div, type) {
   if (this_div.length !== 0) {
