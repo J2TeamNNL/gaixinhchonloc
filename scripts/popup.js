@@ -11,8 +11,12 @@ for (var _i = 0, _Array$from = Array.from(document.querySelectorAll(".msg")); _i
 chrome.storage.local.get("opts", function (_ref) {
   var opts = _ref.opts;
 
+  console.log(opts);
   for (var inpName in opts) {
-    if (inpName) document.querySelector("[name='".concat(inpName, "'][type='checkbox']")).checked = opts[inpName];
+    let input = document.querySelector(`[name=${inpName}][type='checkbox']`);
+    
+    input.checked = opts[inpName];
+    if (opts[inpName]) input.parentElement.classList.add("checked");
   }
 });
 
