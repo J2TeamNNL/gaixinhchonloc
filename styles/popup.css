@@ -1,0 +1,151 @@
+@media (min-width: 768px) {
+    .container {
+        max-width: 1024px !important;
+    }
+}
+
+body {
+    padding: 15px 15px 15px;
+    font-family: "Nunito", arial;
+    font-weight: 600;
+    color: #455a64;
+    background-color: #f1f3f5;
+}
+
+a {
+    color: #adb5bd;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #339af0;
+    text-decoration: none;
+}
+
+header, footer {
+    text-align: center;
+}
+
+header {
+    margin-bottom: 15px;
+}
+
+footer {
+    margin-top: 15px;
+}
+
+header a, footer a {
+    display: inline-block;
+    padding: 0 14px;
+}
+
+footer a {
+    font-size: 16px;
+}
+
+footer a:not(:last-child) {
+    border-right: 2px dashed #c9cfd4;
+}
+
+
+
+footer [data-icon], #open-modal-top [data-icon] {
+    padding-right: 8px;
+    box-sizing: content-box;
+}
+
+.container {
+    position: relative;
+    padding: 64px 15px;
+    background-color: #fff;
+    border-radius: .25rem;
+    box-shadow: 0 5px 10px rgba(0,0,0,.05);
+    overflow: hidden;
+}
+
+.container:before, #modal-inner:before, .container:after {
+    content: " ";
+    position: absolute;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1580009/confetti.svg?vsn=d);
+    background-position: top;
+    background-repeat: repeat-x;
+    width: 100%;
+    height: .75rem;
+    left: 0;
+}
+
+.container:before, #modal-inner:before { top: 0; }
+.container:after { bottom: 0; }
+
+.row + .row [class*="col-"] {
+    padding: 32px;
+}
+
+h1 { color: #ff7502; }
+
+h2 {
+    margin-bottom: 16px;
+    font-size: 18px;
+    color: #90a4ae;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #51646e;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.checkbox:not(.disabled), .checkbox input:not(disabled) {
+    cursor: pointer;
+}
+.disabled{
+    color: gray !important;
+}
+.checkbox {
+    display: block;
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 12px;
+    font-size: 22px;
+    user-select: none;
+    transition: padding-left 0.15s ease-in-out;
+}
+
+.checkbox:hover:not(.disabled) {
+    padding-left: 35px;
+}
+
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+}
+
+.row.lists [data-icon] {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    color: #78909c;
+}
+
+
+.checkbox:hover:not(.disabled),
+.checkbox.checked:not(.disabled) {
+    color: #03a9f4;
+}
+
+.fa{
+    font-size: 2rem;
+}
+.icon{
+    padding: 10px;
+    width: 60px;
+    text-align: center;
+}
