@@ -14,9 +14,10 @@ chrome.storage.local.get("opts", function (_ref) {
   console.log(opts);
   for (var inpName in opts) {
     let input = document.querySelector(`[name=${inpName}][type='checkbox']`);
-    
+
     input.checked = opts[inpName];
     if (opts[inpName]) input.parentElement.classList.add("checked");
+    if (opts[inpName] && inpName === "contains_keywords") $("#div_contains_keywords").show();
   }
 });
 
