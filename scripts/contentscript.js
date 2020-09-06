@@ -59,7 +59,7 @@ chrome.storage.local.get("opts", function (_ref) {
       if (contains_keywords) {
         // bài hoặc bình luận chứa từ khoá
         for (var i = 0; i < keywords.length; i++) {
-          div = $("span[class=\"oi732d6d ik7dh3pa d2edcug0 hpfvmrgz qv66sw1b c1et5uql a8c37x1j muag1w35 enqfppq2 jq4qci2q a3bd9o3v knj5qynh oo9gr5id hzawbc8m\"]:contains(".concat(keywords[i], ")")).closest("div[data-pagelet^=\"FeedUnit\"]").first();
+          div = $("span[class^=\"oi732d6d ik7dh3pa d2edcug0 hpfvmrgz qv66sw1b c1et5uql a8c37x1j muag1w35 enqfppq2 jq4qci2q a3bd9o3v knj5qynh oo9gr5id\"]:contains(".concat(keywords[i], ")")).closest("div[data-pagelet^=\"FeedUnit\"]").first();
 
           if (div.length != 0) {
             executeDiv(div, chrome.i18n.getMessage('post'));
@@ -87,6 +87,9 @@ function executeDiv(this_div, type) {
     div_parent.next().empty();
     appendText(div_parent, type);
     replaceWithImage(div_parent);
+    chrome.runtime.sendMessage({
+      updateBadge: ""
+    });
   }
 }
 

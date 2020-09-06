@@ -1,9 +1,13 @@
 'use strict'; // Functions
 
+var blocked_counter = 0;
+
 function _updateBadge() {
   var str = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "String";
-  var color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "#155997";
-  // Because the badge has limited space, it should have 4 characters or less.
+  var color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "#155997"; // Because the badge has limited space, it should have 4 characters or less.
+  // Convert anything to string
+
+  if (typeof str !== "string") str = "" + str;
   chrome.browserAction.setBadgeBackgroundColor({
     color: color
   });
@@ -22,9 +26,7 @@ function _updateBadge() {
         shared_post: false,
         contains_keywords: false,
         yt: false
-      }
-    });
-    chrome.storage.local.set({
+      },
       keywords: []
     });
     chrome.tabs.create({
@@ -48,7 +50,7 @@ function _updateBadge() {
   chrome.runtime.onMessage.addListener(function (msg, from, response) {
     var fncTable = {
       updateBadge: function updateBadge() {
-        _updateBadge(msg.updateBadge.text, msg.updateBadge.color);
+        _updateBadge(++blocked_counter, msg.updateBadge.color);
       }
     };
     fncTable[Object.keys(msg)[0]]();

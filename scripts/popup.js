@@ -12,7 +12,20 @@ chrome.storage.local.get("opts", function (_ref) {
   var opts = _ref.opts;
 
   for (var inpName in opts) {
-    if (inpName) document.querySelector("[name='".concat(inpName, "'][type='checkbox']")).checked = opts[inpName];
+    var input = document.querySelector("[name=".concat(inpName, "][type='checkbox']"));
+    input.checked = opts[inpName];
+    if (opts[inpName]) input.parentElement.classList.add("checked");
+
+    if (opts[inpName] && inpName === "contains_keywords") {
+      $("#div_contains_keywords").show();
+      chrome.storage.local.get("keywords", function (result) {
+        var array = result.keywords.split(',');
+
+        for (var i = 0; i < array.length; i++) {
+          $('#pac').tagsinput('add', array[i]);
+        }
+      });
+    } else {}
   }
 });
 
