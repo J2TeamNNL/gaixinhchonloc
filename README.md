@@ -10,6 +10,7 @@
 
 - [Thay thế Quảng cáo - Replace Sponsored](#replace-sponsored-facebook)
 - [Thay thế Bài chia sẻ - Replace Shared Post](#replace-shared-post-facebook)
+- [Thay thế Bài đăng và Bình luận chứa từ khoá - Replace Post & Comment contains keywords ](#contains-keywords)
 - [Ẩn mục Cửa hàng - Hide Marketplace](#hide-marketplace-facebook)
 
 # Góp ý - Issues
