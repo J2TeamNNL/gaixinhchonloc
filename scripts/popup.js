@@ -11,9 +11,7 @@ for (var _i = 0, _Array$from = Array.from(document.querySelectorAll(".msg")); _i
 chrome.storage.local.get("opts", function (_ref) {
   var opts = _ref.opts;
 
-  console.log(opts);
   for (var inpName in opts) {
-<<<<<<< HEAD
     var input = document.querySelector("[name=".concat(inpName, "][type='checkbox']"));
     input.checked = opts[inpName];
     if (opts[inpName]) input.parentElement.classList.add("checked");
@@ -28,13 +26,6 @@ chrome.storage.local.get("opts", function (_ref) {
         }
       });
     } else {}
-=======
-    let input = document.querySelector(`[name=${inpName}][type='checkbox']`);
-
-    input.checked = opts[inpName];
-    if (opts[inpName]) input.parentElement.classList.add("checked");
-    if (opts[inpName] && inpName === "contains_keywords") $("#div_contains_keywords").show();
->>>>>>> d07e3527536bf15c1af556f4d5620d3e65c1ce77
   }
 });
 
