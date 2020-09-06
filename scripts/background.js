@@ -8,6 +8,9 @@ function _updateBadge() {
   // Convert anything to string
 
   if (typeof str !== "string") str = "" + str;
+  // Because the badge has limited space, it should have 4 characters or less.
+  // Convert anything to string
+  if (typeof(str) !== "string") str = "" + str;
   chrome.browserAction.setBadgeBackgroundColor({
     color: color
   });
