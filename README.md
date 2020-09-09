@@ -1,5 +1,5 @@
 <p align="center">
- <img height="100px" src=https://user-images.githubusercontent.com/26674308/92330362-6e08ff00-f098-11ea-951d-e8793b654a04.png" align="center" />
+ <img height="100px" src="https://user-images.githubusercontent.com/26674308/92330362-6e08ff00-f098-11ea-951d-e8793b654a04.png" align="center" />
  <h2 align="center">Gái Xinh Chọn Lọc</h2>
  <p align="center">Nơi chia sẻ những bức ảnh đã lưu</p>
 </p>
