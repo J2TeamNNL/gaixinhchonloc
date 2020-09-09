@@ -1,5 +1,5 @@
 <p align="center">
- <img height="100px" src="https://i.imgur.com/30coS7N.png" align="center" />
+ <img height="300px" src="https://i.imgur.com/30coS7N.png" align="center" />
  <h2 align="center">Gái Xinh Chọn Lọc</h2>
  <p align="center">Nơi chia sẻ những bức ảnh đã lưu</p>
 </p>
