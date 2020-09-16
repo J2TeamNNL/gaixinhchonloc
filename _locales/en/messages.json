@@ -1,0 +1,53 @@
+{
+  "appName": {
+    "message": "Gai Xinh Chon Loc"
+  },
+  "appDescription": {
+    "message": "A place to share saved photos"
+  },
+  "notification": {
+    "message": "was replaced by extension"
+  },
+  "group": {
+    "message": "Group"
+  },
+  "page": {
+    "message": "Page"
+  },
+  "h1_title": {
+    "message": "Replace"
+  },
+  "ads": {
+    "message": "Ads"
+  },
+  "store": {
+    "message": "Store button"
+  },
+  "shared_post": {
+    "message": "Shared Post"
+  },
+  "contains_keywords": {
+    "message": "Contains keywords"
+  },
+  "post": {
+    "message": "Post"
+  },
+  "comment": {
+    "message": "Comment"
+  },
+  "poc": {
+    "message": "Post or Comment"
+  },
+  "pog": {
+    "message": "Page or Group"
+  },
+  "contains_name": {
+    "message": "Contain name"
+  },
+  "guide": {
+    "message": "(Press Enter to insert)"
+  },
+  "upcoming": {
+    "message": "(Upcoming)"
+  }
+}

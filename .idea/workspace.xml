@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:gaixinhchonloc" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a12718fb-2f2b-4225-8a24-f82c29bba349" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/app" />
+  </component>
+  <component name="ProjectId" id="1gPV3LQkl2E5HtY1a7xdhueIcP3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/app/scripts.babel/contentscript.js&#10;H:/Extension/gaixinhchonloc/app/scripts.babel/background.js" />
+    <property name="jsx.switch.disabled" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\Extension\gaixinhchonloc\app\_locales\vi" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a12718fb-2f2b-4225-8a24-f82c29bba349" name="Default Changelist" comment="" />
+      <created>1598016013201</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598016013201</updated>
+      <workItem from="1598016014232" duration="7119000" />
+      <workItem from="1598079201871" duration="4020000" />
+      <workItem from="1598242832558" duration="16713000" />
+      <workItem from="1598319389182" duration="2519000" />
+      <workItem from="1598323803197" duration="7490000" />
+      <workItem from="1598406372661" duration="55000" />
+      <workItem from="1598426975094" duration="50000" />
+      <workItem from="1598492453819" duration="156000" />
+      <workItem from="1598513328539" duration="1652000" />
+      <workItem from="1598578482617" duration="1187000" />
+      <workItem from="1598683161227" duration="2215000" />
+      <workItem from="1598688832477" duration="6221000" />
+      <workItem from="1598696117179" duration="2035000" />
+      <workItem from="1598707784557" duration="5467000" />
+      <workItem from="1598727145089" duration="4244000" />
+      <workItem from="1598760435924" duration="268000" />
+      <workItem from="1599193854003" duration="5615000" />
+      <workItem from="1599217559285" duration="6692000" />
+      <workItem from="1599319854498" duration="3285000" />
+      <workItem from="1599371578400" duration="572000" />
+      <workItem from="1599403059958" duration="5873000" />
+      <workItem from="1599722573539" duration="1632000" />
+      <workItem from="1599733896666" duration="3000" />
+      <workItem from="1599926503724" duration="754000" />
+      <workItem from="1600165288166" duration="9123000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="772" y="283" key="#Language_Injections" timestamp="1598514248938">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="772" y="283" key="#Language_Injections/0.0.1920.1040@0.0.1920.1040" timestamp="1598514248938" />
+    <state x="678" y="216" key="FileChooserDialogImpl" timestamp="1598492608701">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="678" y="216" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598492608701" />
+    <state x="737" y="422" key="NewPhpFileDialog" timestamp="1598342648843">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="737" y="422" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598342648843" />
+    <state x="406" y="83" key="SettingsEditor" timestamp="1599930546839">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="381" y="78" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598688872019" />
+    <state x="406" y="83" key="SettingsEditor/0.0.2048.1112@0.0.2048.1112" timestamp="1599930546839" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1600168069807">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600168069807" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1600168069807">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600168069807" />
+    <state x="757" y="444" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598731409931">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="710" y="415" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1598694951753" />
+    <state x="757" y="444" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2048.1112@0.0.2048.1112" timestamp="1598731409931" />
+    <state x="581" y="175" width="757" height="690" key="find.popup" timestamp="1598273147011">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="581" y="175" width="757" height="690" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598273147011" />
+    <state x="532" y="237" key="run.anything.popup" timestamp="1600172917874">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="532" y="237" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600172917874" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1600172955836">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600172955836" />
+  </component>
+</project>

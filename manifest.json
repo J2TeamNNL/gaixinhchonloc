@@ -1,0 +1,44 @@
+{
+  "name": "__MSG_appName__",
+  "version": "2.0.0",
+  "manifest_version": 2,
+  "description": "__MSG_appDescription__",
+  "icons": {
+    "16": "images/16.png",
+    "128": "images/128.png"
+  },
+  "default_locale": "vi",
+  "background": {
+    "scripts": [
+      "libs/polyfill.min.js",
+      "scripts/chromereload.js",
+      "scripts/background.js"
+    ]
+  },
+  "permissions": [
+    "storage",
+    "https://gxcl.info/api.php"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.facebook.com/*"],
+      "js": [
+        "scripts/libs/jquery.min.js",
+        "scripts/contentscript.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "19": "images/19.png",
+      "38": "images/38.png"
+    },
+    "default_title": "Gái Xinh Chọn Lọc"
+  },
+  "web_accessible_resources": [
+    "images/48.png"
+  ],
+  "content_security_policy": "script-src 'self'; object-src 'self'"
+}

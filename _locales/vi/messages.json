@@ -1,0 +1,53 @@
+{
+  "appName": {
+    "message": "Gái Xinh Chọn Lọc"
+  },
+  "appDescription": {
+    "message": "Nơi chia sẻ những bức ảnh đã lưu"
+  },
+  "title": {
+    "message": "Ẩn"
+  },
+  "notification": {
+    "message": "đã bị thay thế bởi tiện ích"
+  },
+  "group": {
+    "message": "Nhóm"
+  },
+  "page": {
+    "message": "Trang"
+  },
+  "ads": {
+    "message": "Quảng cáo"
+  },
+  "store": {
+    "message": "Nút cửa hàng"
+  },
+  "shared_post": {
+    "message": "Bài chia sẻ"
+  },
+  "contains_keywords": {
+    "message": "Chứa từ khoá"
+  },
+  "post": {
+    "message": "Bài đăng"
+  },
+  "comment": {
+    "message": "Bình luận"
+  },
+  "poc": {
+    "message": "Bài đăng hoặc Bình luận"
+  },
+  "pog": {
+    "message": "Trang và nhóm"
+  },
+  "contains_name": {
+    "message": "Chứa tên"
+  },
+  "guide": {
+    "message": "(Bấm Enter để thêm)"
+  },
+  "upcoming": {
+    "message": "(Sắp tới)"
+  }
+}
