@@ -28,7 +28,8 @@ function _updateBadge() {
         contains_name: false,
         yt: false
       },
-      keywords: []
+      keywords: [],
+      name: []
     });
     chrome.tabs.create({
       url: chrome.runtime.getURL("popup.html"),

@@ -3,6 +3,7 @@ let array = {};
 $('#poc').tagsinput('items');
 $('#pog').tagsinput('items');
 
+// Replacing i18n contents
 for (var _i = 0, _Array$from = Array.from(document.querySelectorAll(".msg")); _i < _Array$from.length; _i++) {
     var html = _Array$from[_i];
     var msg = html.innerHTML.replace(/__MSG_(.*)__/g, function (match, msg) {
@@ -10,7 +11,7 @@ for (var _i = 0, _Array$from = Array.from(document.querySelectorAll(".msg")); _i
     });
     html.innerHTML = msg;
 }
-
+// Apply stored settings
 chrome.storage.local.get(["keywords", "name", "opts"], function ({opts, keywords,name}) {
     array = opts;
     $.each(opts,function(key, val){
@@ -27,6 +28,7 @@ chrome.storage.local.get(["keywords", "name", "opts"], function ({opts, keywords
         }
     });
 });
+
 function showAndFillKeywords(keywords){
     $("#div_contains_keywords").show();
     for (var i = 0; i < keywords.length; i++) {
@@ -39,7 +41,7 @@ function showAndFillName(name){
         $('#pog').tagsinput('add', name[i]);
     }
 }
-
+// Listen on certain changes
 $("input[type='checkbox']").change(function() {
     if (this.checked) {
         $(this).parent('label').addClass('checked');
@@ -53,7 +55,6 @@ $("input[type='checkbox']").change(function() {
         opts: array
     });
 });
-
 $('#poc').change(function () {
     chrome.storage.local.set({
         keywords: $(this).val().split(',')
