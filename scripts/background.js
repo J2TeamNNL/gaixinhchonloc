@@ -19,28 +19,32 @@ function _updateBadge() {
 (function (chrome) {
   // Store options
   chrome.runtime.onInstalled.addListener(function () {
-    chrome.storage.local.set({
-      opts: {
-        ads: true,
-        store: true,
-        shared_post: false,
-        contains_keywords: false,
-        contains_name: false,
-        yt: false
-      },
-      keywords: [],
-      name: []
-    });
+    // Check synced settings
+    chrome.storage.sync.get(["name", "keywords"], ({name, keywords}) => {
+      if ( !(name && keywords) ) {
+        chrome.storage.sync.set({
+          opts: {
+            ads: true,
+            store: true,
+            shared_post: false,
+            contains_keywords: false,
+            contains_name: false,
+            yt: false
+          },
+          keywords: [],
+          name: []
+        });
+      }
+      chrome.tabs.create({
+        url: chrome.runtime.getURL("popup.html"),
+        selected: true
+      });
+    })
 
     /* Get user identity (logged in email + ID)
     Required permission: "identity", "identity.email"
     chrome.identity.getProfileUserInfo((uInfo) => console.log(uInfo));
     */
-
-    chrome.tabs.create({
-      url: chrome.runtime.getURL("popup.html"),
-      selected: true
-    });
   }); // Long-lived connection
 
   chrome.runtime.onConnect.addListener(function (port) {

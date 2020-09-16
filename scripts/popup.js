@@ -12,7 +12,7 @@ for (var _i = 0, _Array$from = Array.from(document.querySelectorAll(".msg")); _i
     html.innerHTML = msg;
 }
 // Apply stored settings
-chrome.storage.local.get(["keywords", "name", "opts"], function ({opts, keywords,name}) {
+chrome.storage.sync.get(["keywords", "name", "opts"], function ({opts, keywords,name}) {
     array = opts;
     $.each(opts,function(key, val){
         if(val){
@@ -51,12 +51,12 @@ $("input[type='checkbox']").change(function() {
 
     array[this.name] = this.checked;
 
-    chrome.storage.local.set({
+    chrome.storage.sync.set({
         opts: array
     });
 });
 $('#poc').change(function () {
-    chrome.storage.local.set({
+    chrome.storage.sync.set({
         keywords: $(this).val().split(',')
     });
     if ($(this).val() != '') {
@@ -66,7 +66,7 @@ $('#poc').change(function () {
     }
 });
 $('#pog').change(function () {
-    chrome.storage.local.set({
+    chrome.storage.sync.set({
         name: $(this).val().split(',')
     });
     if ($(this).val() != '') {
@@ -78,7 +78,7 @@ $('#pog').change(function () {
 
 $('#checkbox_contains_keywords').change(function () {
     if (this.checked) {
-        chrome.storage.local.get(["keywords"], function ({keywords}) {
+        chrome.storage.sync.get(["keywords"], function ({keywords}) {
             showAndFillKeywords(keywords);
         });
         $("#poc").focus();
@@ -88,7 +88,7 @@ $('#checkbox_contains_keywords').change(function () {
 });
 $('#checkbox_contains_name').change(function () {
     if (this.checked) {
-        chrome.storage.local.get(["name"], function ({name}) {
+        chrome.storage.sync.get(["name"], function ({name}) {
             showAndFillName(name);
         });
         $("#pog").focus();
