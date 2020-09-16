@@ -31,6 +31,12 @@ function _updateBadge() {
       keywords: [],
       name: []
     });
+
+    /* Get user identity (logged in email + ID)
+    Required permission: "identity", "identity.email"
+    chrome.identity.getProfileUserInfo((uInfo) => console.log(uInfo));
+    */
+
     chrome.tabs.create({
       url: chrome.runtime.getURL("popup.html"),
       selected: true
