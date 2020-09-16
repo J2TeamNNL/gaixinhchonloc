@@ -16,13 +16,25 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:gaixinhchonloc" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a12718fb-2f2b-4225-8a24-f82c29bba349" name="Default Changelist" comment="" />
+    <list default="true" id="a12718fb-2f2b-4225-8a24-f82c29bba349" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/privacy-policy.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/terms-conditions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_locales/en/messages.json" beforeDir="false" afterPath="$PROJECT_DIR$/_locales/en/messages.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_locales/vi/messages.json" beforeDir="false" afterPath="$PROJECT_DIR$/_locales/vi/messages.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/popup.html" beforeDir="false" afterPath="$PROJECT_DIR$/popup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/background.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/background.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/contentscript.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/contentscript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/popup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/popup.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +52,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/app" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1gPV3LQkl2E5HtY1a7xdhueIcP3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -97,6 +109,8 @@
       <workItem from="1599733896666" duration="3000" />
       <workItem from="1599926503724" duration="754000" />
       <workItem from="1600165288166" duration="9123000" />
+      <workItem from="1600240058315" duration="66000" />
+      <workItem from="1600240126373" duration="255000" />
     </task>
     <servers />
   </component>
@@ -120,10 +134,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="772" y="283" key="#Language_Injections/0.0.1920.1040@0.0.1920.1040" timestamp="1598514248938" />
-    <state x="678" y="216" key="FileChooserDialogImpl" timestamp="1598492608701">
+    <state x="678" y="216" key="FileChooserDialogImpl" timestamp="1600240122777">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="678" y="216" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598492608701" />
+    <state x="678" y="216" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600240122777" />
     <state x="737" y="422" key="NewPhpFileDialog" timestamp="1598342648843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

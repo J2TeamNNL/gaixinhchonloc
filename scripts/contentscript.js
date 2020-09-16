@@ -213,4 +213,4 @@ function replaceWithImage(this_div_parent) {
             </div>
         `);
     });
-}
+};
