@@ -9,10 +9,10 @@
 
 
 - [Thay thế Quảng cáo - Replace Sponsored](#replace-sponsored-facebook)
-- [Thay thế Bài chia sẻ - Replace Shared Post](#replace-shared-post-facebook)
-
-- [Thay thế Bài đăng và Bình luận chứa từ khoá - Replace Post & Comment contains keywords ](#contains-keywords)
 - [Ẩn mục Cửa hàng - Hide Marketplace](#hide-marketplace-facebook)
+- [Thay thế Bài chia sẻ - Replace Shared Post](#replace-shared-post-facebook)
+- [Thay thế Bài đăng hoặc Bình luận chứa từ khoá trong danh sách - Replace Post or Comment contains keywords in list ](#contains-keywords)
+- [Thay thế Bài đăng hoặc Bình luận của Trang, Người Dùng hoặc Nhóm có tên trong danh sách - Replace Post or Comment of Page, Profile or Group contains name in list ](#contains-names)
 
 # Góp ý - Issues
 Liên hệ mình nhé [Facebook](https://facebook.com/j2teamnnl).

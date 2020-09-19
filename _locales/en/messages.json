@@ -26,6 +26,9 @@
   "shared_post": {
     "message": "Shared Post"
   },
+  "suggest": {
+    "message": "Suggest for you"
+  },
   "contains_keywords": {
     "message": "Contains keywords"
   },
@@ -39,7 +42,7 @@
     "message": "Post or Comment"
   },
   "pog": {
-    "message": "Page or Group"
+    "message": "Page, Profile or Group"
   },
   "contains_name": {
     "message": "Contain name"

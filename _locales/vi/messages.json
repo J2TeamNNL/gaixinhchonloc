@@ -5,8 +5,8 @@
   "appDescription": {
     "message": "Nơi chia sẻ những bức ảnh đã lưu"
   },
-  "title": {
-    "message": "Ẩn"
+  "h1_title": {
+    "message": "Thay thế"
   },
   "notification": {
     "message": "đã bị thay thế bởi tiện ích"
@@ -38,8 +38,11 @@
   "poc": {
     "message": "Bài đăng hoặc Bình luận"
   },
+  "suggest": {
+    "message": "Gợi ý cho bạn"
+  },
   "pog": {
-    "message": "Trang và nhóm"
+    "message": "Trang, Người Dùng hoặc Nhóm"
   },
   "contains_name": {
     "message": "Chứa tên"
@@ -48,6 +51,6 @@
     "message": "(Bấm Enter để thêm)"
   },
   "upcoming": {
-    "message": "(Sắp tới)"
+    "message": "(Sắp có)"
   }
 }
