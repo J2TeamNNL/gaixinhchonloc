@@ -26,7 +26,7 @@ function removeAscent (str) {
         });
     };
 })(jQuery);
-chrome.storage.local.get(["opts","keywords","name"], ({opts, keywords,name}) => {
+chrome.storage.sync.get(["opts","keywords","name"], ({opts, keywords,name}) => {
     if(opts.ads){
         ads = true;
     }
