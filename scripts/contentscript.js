@@ -39,8 +39,8 @@ function removeAscent(str) {
         });
     };
 })(jQuery);
-chrome.storage.sync.get(["opts", "keywords", "name"], ({opts, keywords, name}) => {
-    if (opts.ads) {
+chrome.storage.sync.get(["opts","keywords","name"], ({opts, keywords,name}) => {
+    if(opts.ads){
         ads = true;
     }
     if (opts.shared_post) {
