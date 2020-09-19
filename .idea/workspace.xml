@@ -24,7 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a12718fb-2f2b-4225-8a24-f82c29bba349" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/contentscript.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/contentscript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/popup.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +103,7 @@
       <workItem from="1600240058315" duration="66000" />
       <workItem from="1600240126373" duration="399000" />
       <workItem from="1600523446389" duration="4576000" />
-      <workItem from="1600529099555" duration="2942000" />
+      <workItem from="1600529099555" duration="3298000" />
     </task>
     <servers />
   </component>
@@ -152,11 +152,11 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="413" y="57" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2048.1112@0.0.2048.1112" timestamp="1600531245150" />
-    <state x="757" y="444" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600525215154">
+    <state x="757" y="444" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600532423267">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="710" y="415" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1598694951753" />
-    <state x="757" y="444" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2048.1112@0.0.2048.1112" timestamp="1600525215154" />
+    <state x="757" y="444" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2048.1112@0.0.2048.1112" timestamp="1600532423267" />
     <state x="581" y="175" width="757" height="690" key="find.popup" timestamp="1598273147011">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
