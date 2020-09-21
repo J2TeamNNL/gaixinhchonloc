@@ -16,6 +16,7 @@
     ]
   },
   "permissions": [
+    "notifications",
     "storage",
     "https://gxcl.info/api.php"
   ],

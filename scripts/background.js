@@ -37,7 +37,14 @@ function _updateBadge(str = "String", color = "#155997") {
         url: chrome.runtime.getURL("popup.html"),
         selected: true
       });
-    })
+    });
+    // Notification after install
+    chrome.notifications.create({
+      type: "basic",
+      title: chrome.i18n.getMessage("appName"),
+      message: "Extension Installed!",
+      iconUrl: "../images/128.png"
+    });
 
     /* Get user identity (logged in email + ID)
     Required permission: "identity", "identity.email"
