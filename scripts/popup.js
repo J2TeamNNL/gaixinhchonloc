@@ -4,8 +4,7 @@ $('#poc').tagsinput('items');
 $('#pog').tagsinput('items');
 
 // Replacing i18n contents
-for (var _i = 0, _Array$from = Array.from(document.querySelectorAll(".msg")); _i < _Array$from.length; _i++) {
-    var html = _Array$from[_i];
+for (let html of Array.from(document.querySelectorAll(".msg"))) {
     var msg = html.innerHTML.replace(/__MSG_(.*)__/g, function (match, msg) {
         return chrome.i18n.getMessage(msg);
     });

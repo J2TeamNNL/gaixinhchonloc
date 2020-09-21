@@ -2,11 +2,9 @@
 
 var blocked_counter = 0;
 
-function _updateBadge() {
-  var str = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "String";
-  var color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "#155997"; // Because the badge has limited space, it should have 4 characters or less.
+function _updateBadge(str = "String", color = "#155997") {
+  // Because the badge has limited space, it should have 4 characters or less.
   // Convert anything to string
-
   if (typeof str !== "string") str = "" + str;
   chrome.browserAction.setBadgeBackgroundColor({
     color: color
