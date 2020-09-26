@@ -24,4 +24,3 @@ This extension is open-sourced software licensed under the [MIT license](MIT-lic
 
 # Người hướng dẫn - Mentor
 - [Mạnh Tuấn - Juno_Okyo](https://github.com/J2Team)
-- [Công Minh Đức](https://github.com/duckimann)
