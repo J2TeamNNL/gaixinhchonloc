@@ -182,27 +182,27 @@ function getDivPage(name) {
 }
 
 function executeDiv(this_div, type) {
-    console.log(this_div);
-    // if (this_div.length !== 0) {
-    //     // loại bỏ khỏi danh sách cũ
-    //     this_div.removeAttr('data-pagelet');
+    // console.log(this_div);
+    if (this_div.length !== 0) {
+        // loại bỏ khỏi danh sách cũ
+        this_div.removeAttr('data-pagelet');
 
-    //     // tìm div thông tin bài đăng
-    //     let div_parent = this_div.find(`a[aria-hidden="true"]`).closest('div:not([class])').next();
+        // tìm div thông tin bài đăng
+        let div_parent = this_div.find(`a[aria-hidden="true"]`).closest('div:not([class])').next();
 
-    //     // chỉnh ảnh
-    //     changePagePicture(this_div);
+        // chỉnh ảnh
+        changePagePicture(this_div);
 
-    //     // chỉnh tên Page
-    //     changePageName(this_div);
+        // chỉnh tên Page
+        changePageName(this_div);
 
-    //     // xoá hết thông tin bài đăng gốc
-    //     div_parent.empty();
-    //     div_parent.next().empty();
-    //     appendText(div_parent, type);
-    //     replaceWithImage(div_parent);
-    //     chrome.runtime.sendMessage({updateBadge: ""});
-    // }
+        // xoá hết thông tin bài đăng gốc
+        div_parent.empty();
+        div_parent.next().empty();
+        appendText(div_parent, type);
+        replaceWithImage(div_parent);
+        chrome.runtime.sendMessage({updateBadge: ""});
+    }
 }
 
 function hideStoreButton() {
