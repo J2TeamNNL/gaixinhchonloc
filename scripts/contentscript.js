@@ -58,6 +58,64 @@ chrome.storage.sync.get(["opts","keywords","name"], ({opts, keywords,name}) => {
         array_name = name;
     }
 });
+
+
+// remove ads --------------------
+function isAds(node) {
+    if (node.textContent.substr(0, 512).indexOf("Được tài trợ") > -1) {
+        return true;
+    }
+    return false;
+}
+function processNode(node) {
+    if (!node) {
+        return;
+    }
+    let childrens = node.children;
+    for (let i = childrens.length - 1; i >= 0; --i) {
+        if (childrens[i].getAttribute("scanned")) break;
+        if (!childrens[i].getAttribute("data-pagelet")) {
+            continue;
+        }
+        if (isAds(childrens[i])) {
+            executeDiv($(childrens[i]), chrome.i18n.getMessage('ads'));
+        }
+        childrens[i].setAttribute("scanned", "true");
+    }
+}
+
+var mutationObserver = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+        if (mutation.type !== "childList") {
+            return;
+        }
+        processNode(mutation.target);
+    });
+});
+jQuery(document).ready(function ($) {
+    !async function () {
+        if (ads === false) {
+            return;
+        }
+        var feed = null;
+        do {
+            await new Promise((resolve) => setTimeout(() => resolve(), 1000));
+            feed = document.querySelector('[role="feed"]');
+        } while (feed === null);
+
+        mutationObserver.observe(feed, {
+            attributes: false,
+            characterData: false,
+            childList: true,
+            subtree: true,
+            attributeOldValue: false,
+            characterDataOldValue: false
+        });
+    }();
+});
+// end remove ads ------------------
+
+
 (function (chrome) {
     jQuery(document).ready(function ($) {
         if (store) {
@@ -66,16 +124,6 @@ chrome.storage.sync.get(["opts","keywords","name"], ({opts, keywords,name}) => {
 
         $(window).scroll(function () {
             let i;
-            if (ads) {
-                // bài quảng cáo
-                div = $('[aria-label="Sponsored"]').closest(`div[data-pagelet^="FeedUnit"]`).first();
-                if (div.length === 0) {
-                    div = $('[aria-label="Được tài trợ"]').closest(`div[data-pagelet^="FeedUnit"]`).first();
-                }
-                if (div.length !== 0) {
-                    executeDiv(div, chrome.i18n.getMessage('ads'));
-                }
-            }
             if (shared_post) {
                 // bài chia sẻ
                 div = $('[data-testid="Keycommand_wrapper_feed_attached_story"]').closest(`div[data-pagelet^="FeedUnit"]`).first();

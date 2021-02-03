@@ -8,7 +8,8 @@ const filesInDirectory = dir => new Promise(resolve =>
 	)
 )
 const timestampForFilesInDirectory = dir => filesInDirectory(dir).then(files => files.map(f => f.name + f.lastModifiedDate).join())
-const reload = () => {
+const reload = async () => {
+	await new Promise((resolve) => setTimeout(() => resolve(), 1000));
 	chrome.tabs.query({ active: true, currentWindow: true }, tabs => { // NB: see https://github.com/xpl/crx-hotreload/issues/5
 		if (tabs[0]) chrome.tabs.reload(tabs[0].id);
 		chrome.runtime.reload();
