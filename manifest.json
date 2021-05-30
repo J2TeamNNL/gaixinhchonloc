@@ -35,6 +35,13 @@
 			],
 			"run_at": "document_idle",
 			"all_frames": false
+		},
+		{
+			"matches": ["*://*.flickr.com/*"],
+			"js": [
+				"scripts/injects/flickr.js"
+			],
+			"run_at": "document_start"
 		}
 	],
 	"browser_action": {
