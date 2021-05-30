@@ -1,21 +1,42 @@
 'use strict';
-let id_page = '668664313334178';
-let link_avatar = `https://graph.facebook.com/${id_page}/picture?type=large`;
-let link_api = `https://gxcl.info/api.php`;
-let link_page = `https://facebook.com/gaixinhchonloc`;
-let link_photo, width, height, div;
+// Config
 let ads = false, shared_post = false, store = false, contains_keywords = false, contains_name = false,
     array_keywords = [], array_name = [];
-let class_comment_name = "nc684nl6";
-let class_comment_text = "kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x c1et5uql";
-let class_comment_image = "j83agx80 bvz0fpym c1et5uql";
-let class_div_comment = "g3eujd1d ni8dbmo4 stjgntxs";
+
+let link = {
+        avatar: `https://graph.facebook.com/668664313334178/picture?type=large`,
+        api: `https://gxcl.info/api.php`,
+        page: `https://facebook.com/gaixinhchonloc`,
+        photo: ""
+    }
+let width, height, div;
+
+let classes = {
+    cmt_name: "nc684nl6",
+    cmt_text: "kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x c1et5uql",
+    cmt_img: "j83agx80 bvz0fpym c1et5uql",
+    div_cmt: "g3eujd1d ni8dbmo4 stjgntxs"
+}
 let href_name_page = `
     <a class="oajrlxb2 g5ia77u1 qu0x051f esr5mh6w e9989ue4 r7d6kgcz rq0escxv nhd2j8a9 nc684nl6 p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso i1ao9s8h esuyzwwr f1sip0of lzcic4wl oo9gr5id gpro0wi8 lrazzd5p"
-       href="${link_page}" role="link" tabindex="0">
+       href="${link.page}" role="link" tabindex="0">
         <strong>${chrome.i18n.getMessage('appName')}</strong>
     </a>
 `;
+
+chrome.storage.sync.get(["opts","keywords","name"], ({opts, keywords,name}) => { // Update Config
+    if (opts.ads) ads = true;
+    if (opts.shared_post) shared_post = true;
+    if (opts.store) store = true;
+    if (opts.contains_keywords) {
+        contains_keywords = true;
+        array_keywords = keywords;
+    }
+    if (opts.contains_name) {
+        contains_name = true;
+        array_name = name;
+    }
+});
 
 function removeAscent(str) {
     if (str === null || str === undefined) return str;
@@ -29,7 +50,6 @@ function removeAscent(str) {
     str = str.replace(/đ/g, "d");
     return str;
 }
-
 (function ($) {
     $.fn.regex = function (keywords, fn, fn_a) {
         var fn = fn || $.fn.text;
@@ -39,42 +59,18 @@ function removeAscent(str) {
         });
     };
 })(jQuery);
-chrome.storage.sync.get(["opts","keywords","name"], ({opts, keywords,name}) => {
-    if(opts.ads){
-        ads = true;
-    }
-    if (opts.shared_post) {
-        shared_post = true;
-    }
-    if (opts.store) {
-        store = true;
-    }
-    if (opts.contains_keywords) {
-        contains_keywords = true;
-        array_keywords = keywords;
-    }
-    if (opts.contains_name) {
-        contains_name = true;
-        array_name = name;
-    }
-});
+
 (function (chrome) {
     jQuery(document).ready(function ($) {
-        if (store) {
-            hideStoreButton();
-        }
+        if (store) $('a[href*="marketplace"]').closest(`li`).hide(); // bỏ nút quảng cáo
 
         $(window).scroll(function () {
             let i;
             if (ads) {
                 // bài quảng cáo
                 div = $('[aria-label="Sponsored"]').closest(`div[data-pagelet^="FeedUnit"]`).first();
-                if (div.length === 0) {
-                    div = $('[aria-label="Được tài trợ"]').closest(`div[data-pagelet^="FeedUnit"]`).first();
-                }
-                if (div.length !== 0) {
-                    executeDiv(div, chrome.i18n.getMessage('ads'));
-                }
+                if (div.length === 0) div = $('[aria-label="Được tài trợ"]').closest(`div[data-pagelet^="FeedUnit"]`).first();
+                if (div.length !== 0) executeDiv(div, chrome.i18n.getMessage('ads'));
             }
             if (shared_post) {
                 // bài chia sẻ
@@ -85,21 +81,15 @@ chrome.storage.sync.get(["opts","keywords","name"], ({opts, keywords,name}) => {
                 // trang hoặc nhóm chứa tên
                 for (i = 0; i < array_name.length; i++) {
                     div = getDivGroup(array_name[i]);
-                    if (div.length === 0) {
-                        div = getDivPage(array_name[i]);
-                    }
-                    if (div.length === 0) {
-                        div = getDivCommentByName(array_name[i]);
-                    }
+                    if (div.length === 0) div = getDivPage(array_name[i]);
+                    if (div.length === 0) div = getDivCommentByName(array_name[i]);
                 }
             }
             if (contains_keywords) {
                 // bài hoặc bình luận chứa từ khoá
                 for (i = 0; i < array_keywords.length; i++) {
                     div = getDivPost(array_keywords[i]);
-                    if (div.length === 0) {
-                        getDivComment(array_keywords[i]);
-                    }
+                    if (div.length === 0) getDivComment(array_keywords[i]);
                 }
             }
         });
@@ -107,21 +97,15 @@ chrome.storage.sync.get(["opts","keywords","name"], ({opts, keywords,name}) => {
 })(chrome);
 
 function getDivCommentByName(name) {
-    div = $(`div[class="${class_comment_name}"]:not('.ex-replaced')`)
+    div = $(`div[class="${classes.cmt_name}"]:not('.ex-replaced')`)
         .regex(name)
         .html(href_name_page)
-        // thêm class là đã loại trừ
-        .addClass('ex-replaced')
-        // tìm đến div tổng
-        .closest(`div[class='${class_div_comment}']`);
+        .addClass('ex-replaced') // thêm class là đã loại trừ
+        .closest(`div[class='${classes.div_cmt}']`); // tìm đến div tổng
 
-    // tìm đến div con có hình ảnh rồi loại bỏ nó
-    div
-        .find(`div[class='${class_comment_image}']`).remove();
-    div
-        .find(`div[class='${class_comment_text}']`)
-        // thêm class là đã loại trừ
-        .addClass('ex-replaced')
+    div.find(`div[class='${classes.cmt_img}']`).remove(); // tìm đến div con có hình ảnh rồi loại bỏ nó
+    div.find(`div[class='${classes.cmt_text}']`)
+        .addClass('ex-replaced') // thêm class là đã loại trừ
         .html(`
            ${chrome.i18n.getMessage('pog')} ${chrome.i18n.getMessage('contains_name').toLowerCase()} ${chrome.i18n.getMessage('notification')}
            <a href="https://facebook.com/gaixinhchonloc">${chrome.i18n.getMessage('appName')}</a>
@@ -130,19 +114,16 @@ function getDivCommentByName(name) {
 }
 
 function getDivComment(keyword) {
-    $(`div[class="${class_comment_text}"]:not('.ex-replaced')`)
+    $(`div[class="${classes.cmt_text}"]:not('.ex-replaced')`)
         .regex(keyword)
         .html(`
            ${chrome.i18n.getMessage('comment')} ${chrome.i18n.getMessage('contains_keywords').toLowerCase()} ${chrome.i18n.getMessage('notification')}
            <a href="https://facebook.com/gaixinhchonloc">${chrome.i18n.getMessage('appName')}</a>
            .
         `)
-        // thêm class là đã loại trừ
-        .addClass('ex-replaced')
-        // tìm đến div tổng
-        .closest(`div[class='${class_div_comment}']`)
-        // tìm đến div con có hình ảnh rồi loại bỏ nó
-        .find(`div[class='${class_comment_image}'`).remove();
+        .addClass('ex-replaced') // thêm class là đã loại trừ
+        .closest(`div[class='${classes.div_cmt}']`) // tìm đến div tổng
+        .find(`div[class='${classes.cmt_img}'`).remove(); // tìm đến div con có hình ảnh rồi loại bỏ nó
 }
 
 function getDivPost(keyword) {
@@ -184,17 +165,11 @@ function getDivPage(name) {
 function executeDiv(this_div, type) {
     // console.log(this_div);
     if (this_div.length !== 0) {
-        // loại bỏ khỏi danh sách cũ
-        this_div.removeAttr('data-pagelet');
+        this_div.removeAttr('data-pagelet'); // loại bỏ khỏi danh sách cũ
+        let div_parent = this_div.find(`a[aria-hidden="true"]`).closest('div:not([class])').next(); // tìm div thông tin bài đăng
 
-        // tìm div thông tin bài đăng
-        let div_parent = this_div.find(`a[aria-hidden="true"]`).closest('div:not([class])').next();
-
-        // chỉnh ảnh
-        changePagePicture(this_div);
-
-        // chỉnh tên Page
-        changePageName(this_div);
+        changePagePicture(this_div); // chỉnh ảnh
+        changePageName(this_div); // chỉnh tên Page
 
         // xoá hết thông tin bài đăng gốc
         div_parent.empty();
@@ -205,25 +180,18 @@ function executeDiv(this_div, type) {
     }
 }
 
-function hideStoreButton() {
-    // bỏ nút quảng cáo
-    $('a[href*="marketplace"]').closest(`li`).hide();
-}
-
 function changePagePicture(this_div) {
     this_div.find(`a[aria-hidden="true"]`).closest('div').html(`
         <a class="oajrlxb2 g5ia77u1 qu0x051f esr5mh6w e9989ue4 r7d6kgcz rq0escxv nhd2j8a9 nc684nl6 p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso i1ao9s8h esuyzwwr f1sip0of lzcic4wl oo9gr5id gpro0wi8 lrazzd5p"
-           href="${link_page}" role="link" tabindex="0">
-            <img src="${link_avatar}" style="height: 40px; width: 40px; border-radius:50%">
+           href="${link.page}" role="link" tabindex="0">
+            <img src="${link.avatar}" style="height: 40px; width: 40px; border-radius:50%">
         </a>
     `);
 }
 
 function changePageName(this_div) {
     let div = this_div.find('strong');
-    if (div.length == 0) {
-        div = this_div.find(`div[class="jq4qci2q ekzkrbhg a3bd9o3v"]`);
-    }
+    if (div.length == 0) div = this_div.find(`div[class="jq4qci2q ekzkrbhg a3bd9o3v"]`);
     div.closest('div').html(href_name_page);
 }
 
@@ -244,15 +212,15 @@ function appendText(this_div_parent, type) {
 
 function replaceWithImage(this_div_parent) {
     let background = chrome.runtime.connect({name: "bg"});
-    background.postMessage({url: link_api});
+    background.postMessage({url: link.api});
     background.onMessage.addListener((msg) => {
-        link_photo = msg.response.link;
+        link.photo = msg.response.link;
         width = msg.response.width;
         height = msg.response.height;
         this_div_parent.append(`
             <div class="l9j0dhe7">
                 <div class="l9j0dhe7">
-                <a href="${link_photo}" target="_blank" role="link" tabindex="0" class="oajrlxb2 gs1a9yip g5ia77u1 mtkw9kbi tlpljxtp qensuy8j ppp5ayq2 goun2846 ccm00jje s44p3ltw mk2mc5f4 rt8b4zig n8ej3o3l agehan2d sk4xxmp2 rq0escxv nhd2j8a9 a8c37x1j mg4g778l btwxx1t3 pfnyh3mw p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x tgvbjcpo hpfvmrgz jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso l9j0dhe7 i1ao9s8h esuyzwwr f1sip0of du4w35lb lzcic4wl abiwlrkh p8dawk7l tm8avpzi">
+                <a href="${link.photo}" target="_blank" role="link" tabindex="0" class="oajrlxb2 gs1a9yip g5ia77u1 mtkw9kbi tlpljxtp qensuy8j ppp5ayq2 goun2846 ccm00jje s44p3ltw mk2mc5f4 rt8b4zig n8ej3o3l agehan2d sk4xxmp2 rq0escxv nhd2j8a9 a8c37x1j mg4g778l btwxx1t3 pfnyh3mw p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x tgvbjcpo hpfvmrgz jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso l9j0dhe7 i1ao9s8h esuyzwwr f1sip0of du4w35lb lzcic4wl abiwlrkh p8dawk7l tm8avpzi">
                     <div class="bp9cbjyn tqsryivl j83agx80 cbu4d94t ni8dbmo4 stjgntxs l9j0dhe7 k4urcfbm"
                          style="background-color: rgb(11, 6, 12);">
                         <div
@@ -262,7 +230,7 @@ function replaceWithImage(this_div_parent) {
                                     width="${width}"
                                     height="${height}"
                                     class="i09qtzwb n7fi1qx3 datstx6m pmk7jnqg j9ispegn kr520xx4 k4urcfbm bixrwtb6"
-                                    src="${link_photo}">
+                                    src="${link.photo}">
                             </div>
                         </div>
                     </div>
