@@ -27,7 +27,13 @@ chrome.runtime.onConnect.addListener(function(port) {
 // Short-lived connection. Actually just send the msg and quit.
 chrome.runtime.onMessage.addListener(function(msg, from, response) {
 	var fncTable = {
-		download: () => _download(msg.download),
+		download: () => {
+			if (Array.isArray(msg.download)) {
+				for (let url of msg.download) _download(url);
+			} else {
+				_download(msg.download);
+			}
+		},
 		updateBadge: () => _updateBadge(++blocked_counter, msg.updateBadge.color)
 	};
 	fncTable[Object.keys(msg)[0]]();

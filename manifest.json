@@ -42,6 +42,13 @@
 				"scripts/injects/flickr.js"
 			],
 			"run_at": "document_start"
+		},
+		{
+			"matches": ["*://www.tumblr.com/*"],
+			"js": [
+				"scripts/injects/tumblr.js"
+			],
+			"run_at": "document_start"
 		}
 	],
 	"browser_action": {
