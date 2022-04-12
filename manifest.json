@@ -1,37 +1,36 @@
 {
+	"manifest_version": 3,
 	"name": "__MSG_appName__",
-	"version": "3.1.0",
-	"manifest_version": 2,
+	"version": "3.1.1",
 	"description": "__MSG_appDescription__",
 	"icons": {
-		"16": "images/16.png",
-		"128": "images/128.png"
+		"19": "icons/19.png",
+		"38": "icons/38.png",
+		"48": "icons/48.png",
+		"128": "icons/128.png",
+		"300": "icons/300.png"
 	},
 	"default_locale": "vi",
 	"background": {
-		"scripts": [
-			"libs/polyfill.min.js",
-			"scripts/background/chromereload.js",
-			"scripts/background/index.js",
-			"scripts/background/msgs.js",
-			"scripts/background/reqCap.js"
-		]
+		"service_worker": "scripts/sw.js"
 	},
 	"permissions": [
-		"downloads",
 		"notifications",
+		"downloads",
 		"storage",
 		"tabs",
-		"webRequest",
+		"webRequest"
+	],
+	"host_permissions": [
 		"https://gxcl.info/api.php",
-		"<all_urls>"
+		"*://*/*"
 	],
 	"content_scripts": [
 		{
 			"matches": ["*://*.facebook.com/*"],
 			"js": [
 				"scripts/libs/jquery.min.js",
-				"scripts/contentscript.js"
+				"scripts/injects/fb.js"
 			],
 			"run_at": "document_idle",
 			"all_frames": false
@@ -51,15 +50,24 @@
 			"run_at": "document_start"
 		}
 	],
-	"browser_action": {
+	"action": {
 		"default_icon": {
-			"19": "images/19.png",
-			"38": "images/38.png"
+			"19": "icons/19.png",
+			"38": "icons/38.png",
+			"48": "icons/48.png",
+			"128": "icons/128.png",
+			"300": "icons/300.png"
 		},
-		"default_title": "Gái Xinh Chọn Lọc"
+		"default_title": "__MSG_appName__"
 	},
-	"web_accessible_resources": [
-		"images/48.png"
-	],
-	"content_security_policy": "script-src 'self'; object-src 'self'"
+	"web_accessible_resources": [{
+		"resources": [
+			"icons/48.png"
+		],
+		"matches": ["*://*/*"]
+	}],
+	"content_security_policy": {
+		"script-src": "self",
+		"object-src": "self"
+	}
 }

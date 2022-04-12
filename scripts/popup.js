@@ -5,7 +5,7 @@ $('#pog').tagsinput('items');
 
 // Replacing i18n contents
 for (let html of Array.from(document.querySelectorAll(".msg"))) {
-    var msg = html.innerHTML.replace(/__MSG_(.*)__/g, function (match, msg) {
+    let msg = html.innerHTML.replace(/__MSG_(.*)__/g, function (match, msg) {
         return chrome.i18n.getMessage(msg);
     });
     html.innerHTML = msg;
@@ -30,13 +30,13 @@ chrome.storage.sync.get(["keywords", "name", "opts"], function ({opts, keywords,
 
 function showAndFillKeywords(keywords){
     $("#div_contains_keywords").show();
-    for (var i = 0; i < keywords.length; i++) {
+    for (let i = 0; i < keywords.length; i++) {
         $('#poc').tagsinput('add', keywords[i]);
     }
 }
 function showAndFillName(name){
     $("#div_contains_name").show();
-    for (var i = 0; i < name.length; i++) {
+    for (let i = 0; i < name.length; i++) {
         $('#pog').tagsinput('add', name[i]);
     }
 }
